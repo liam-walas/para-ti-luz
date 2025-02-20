@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amor</title>
+    <style>   
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ff3366;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+        .button img {
+            width: 250px;
+            height: auto;
+            border-radius: 30px;
+            transition: transform 0.3s;
+        }
+        .button img:hover {
+            transform: scale(1.1);
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #ff3366;
+            margin-top: 10px;
+        }
+        .gatitos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .gatitos img {
+            width: 200px;
+            height: auto;
+        }
+        
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            .button-container {
+                gap: 15px;
+            }
+            .button img {
+                width: 200px;
+            }
+            .gatitos img {
+                width: 150px;
+            }
+        }
+        
+        /* Media query para pantallas extra pequeñas (teléfonos móviles) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+            .gatitos {
+                flex-direction: row;  /* Cambié aquí para que las imágenes estén una al lado de la otra */
+                gap: 20px;
+            }
+            .button-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .button img {
+                width: 180px;
+            }
+            .subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Te Amo Mucho, Mi Amor 💖</h1>
+        <p style="font-size: 29px;">Haz clic en las imágenes para descubrir sorpresas.</p>
+
+        <div class="gatitos">
+            <img src="https://i.pinimg.com/originals/fd/35/30/fd3530b992c00cc1556a794a306cef45.gif" alt="Gatito animado">
+            <img src="https://i.pinimg.com/originals/fd/35/30/fd3530b992c00cc1556a794a306cef45.gif" alt="Gatito animado">
+        </div>
+
+        <div class="button-container">
+            <a href="sor1.html" class="button" title="Haz clic para ver la sorpresa 1">
+                <img src="boton1.webp" alt="Sorpresa 1">
+                <div class="subtitle">SORPRESA 1</div>
+            </a>
+            <a href="sor.html" class="button" title="Haz clic para ver la sorpresa 2">
+                <img src="boton 2.webp" alt="Sorpresa 2">
+                <div class="subtitle">SORPRESA 2</div>
+            </a>
+            <a href="sort.html" class="button" title="Haz clic para ver la sorpresa 3">
+                <img src="boton 3.webp" alt="Sorpresa 3">
+                <div class="subtitle">SORPRESA 3</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

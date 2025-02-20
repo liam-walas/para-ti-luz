@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: url('https://png.pngtree.com/background/20230203/original/pngtree-red-hearts-in-glossy-background-picture-image_2025581.jpg');
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #ff6699;
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        .message {
+            font-size: 22px;
+            color: #990033;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .letters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .letter {
+            width: 170px;
+            height: 120px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.5s, background 0.3s;
+        }
+        .letter:hover {
+            transform: rotate(10deg) scale(1.1);
+            background: #ff99cc;
+            color: white;
+        }
+        #letterContent {
+            font-size: 20px;
+            font-weight: bold;
+            color: #660033;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .gif-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .gif-container img {
+            width: 250px;
+            height: auto;
+            display: none;
+        }
+
+        /* Media query para pantallas pequeñas (como teléfonos) */
+        @media (max-width: 768px) {
+            header {
+                font-size: 24px;
+            }
+            .message {
+                font-size: 18px;
+            }
+            .letter {
+                width: 140px;
+                height: 100px;
+                font-size: 18px;
+            }
+            #letterContent {
+                font-size: 18px;
+            }
+            .gif-container img {
+                width: 200px;
+            }
+        }
+
+        /* Media query para pantallas más pequeñas (como teléfonos muy pequeños) */
+        @media (max-width: 480px) {
+            header {
+                font-size: 20px;
+            }
+            .message {
+                font-size: 16px;
+            }
+            .letter {
+                width: 120px;
+                height: 90px;
+                font-size: 16px;
+            }
+            #letterContent {
+                font-size: 16px;
+            }
+            .gif-container img {
+                width: 180px;
+            }
+            /* Para dispositivos móviles, los elementos se alinean en fila */
+            .letters {
+                flex-direction: row; /* Coloca las cartas en fila */
+                justify-content: space-around;
+                gap: 10px;
+            }
+            /* Coloca los mensajes y gifs al lado de las cartas */
+            #letterContent,
+            .gif-container {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 20px;
+                width: 50%; /* Se toma la mitad del espacio disponible */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Para Mi Amor 💖</header>
+    <div class="container">
+        <p class="message">Eres la razón de mi felicidad. Cada día contigo es un regalo. 💕</p>
+        <div class="letters">
+            <div class="letter" onclick="showMessage(1, true)">Carta 1</div>
+            <div class="letter" onclick="showMessage(2, false)">Carta 2</div>
+            <div class="letter" onclick="showMessage(3, false)">Carta 3</div>
+            <div class="letter" onclick="showMessage(4, false)">Carta 4</div>
+            <div class="letter" onclick="showMessage(5, false)">Carta 5</div>
+            <div class="letter" onclick="showMessage(6, false)">Carta 6</div>
+        </div>
+        <div id="letterContent" class="message"></div>
+        <div class="gif-container">
+            <img id="gifImage" src="" alt="Gif animado">
+        </div>
+        <audio id="meowSound" src="Sebastián Yatra - No Hay Nadie Más (Official Video).mp3"></audio>
+    </div>
+    <script>
+        function showMessage(letterNumber, playSound) {
+            let messages = [
+                "Eres mi luz en los días oscuros. Te amo mucho! Siempre que miro tus ojos, encuentro un universo lleno de amor y felicidad. Gracias por llenar mi vida de alegría y por ser mi inspiración. 💕",
+                "Cada momento a tu lado es un tesoro. Gracias por existir. No hay día en que no agradezca al destino por haberte puesto en mi camino. Eres mi mejor amiga, mi compañera y el amor de mi vida. ❤️",
+                "Tu sonrisa ilumina mi mundo. Siempre estaré para ti. No importa los momentos difíciles, juntos siempre encontraremos la manera de salir adelante. Eres mi mayor motivación y la persona con la que quiero compartir todos mis días. 💖",
+                "Cuando te miro, veo mi felicidad reflejada en ti. No hay palabras suficientes para describir lo que siento por ti. Te amo con todo mi corazón y siempre estaré aquí para cuidarte y hacerte sonreír. 💕",
+                "Eres mi persona favorita en este mundo. Nunca olvides cuánto te amo. Cada día a tu lado es una aventura maravillosa, llena de amor y ternura. Gracias por ser tan increíble y hacerme sentir el hombre más afortunado. ❤️",
+                "No importa la distancia, mi corazón siempre estará contigo. El amor que compartimos es más fuerte que cualquier obstáculo. Siempre te llevaré en mi pensamiento y en mi alma, porque eres mi todo. 💕"
+            ];
+            let gifs = [
+                "https://i.pinimg.com/originals/9b/dc/c6/9bdcc6206c1d36a37149d31108c6bb41.gif",
+                "https://i.pinimg.com/originals/4d/67/84/4d6784bcad9589f99efd63f9474f841b.gif",
+                "https://i.pinimg.com/originals/ab/d6/1d/abd61deaed5edaf622c2d4a23844a5a1.gif",
+                "https://i.pinimg.com/originals/35/a5/a7/35a5a7cc6f96013d4a8dd8e0af571e7c.gif",
+                "https://i.pinimg.com/originals/e1/f9/47/e1f94781a5c2fbf53fc719ec9e9e169a.gif",
+                "https://i.pinimg.com/originals/8d/dc/29/8ddc290b8406f6d83e1f715f6dc047b7.gif"
+            ];
+            document.getElementById("letterContent").innerText = messages[letterNumber - 1];
+            document.getElementById("gifImage").src = gifs[letterNumber - 1];
+            document.getElementById("gifImage").style.display = "block";
+            if (playSound) {
+                document.getElementById("meowSound").play();
+            }
+        }
+    </script>
+</body>
+</html>
+
